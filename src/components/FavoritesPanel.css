@@ -1,0 +1,228 @@
+.favorites-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(13, 12, 34, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.favorites-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.favorites-panel {
+  position: fixed;
+  top: 0;
+  right: -450px;
+  width: 100%;
+  max-width: 440px;
+  height: 100vh;
+  background: #ffffff;
+  border-radius: 24px 0 0 24px;
+  box-shadow: -10px 0 40px rgba(0,0,0,0.08);
+  border: none;
+  z-index: 101;
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.favorites-panel.open {
+  right: 0;
+}
+
+.favorites-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.favorites-header h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.close-panel-btn {
+  background: #f3f4f6;
+  border: none;
+  color: var(--text-primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.close-panel-btn:hover {
+  background: #e5e7eb;
+}
+
+/* --- Controls Area --- */
+.favorites-controls {
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  background: #fafafa;
+}
+
+.sidebar-search {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.sidebar-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+}
+
+.sidebar-search-input {
+  padding-left: 42px;
+  padding-right: 16px;
+  height: 48px;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.sidebar-search-input:focus {
+  border-color: #d1d5db;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.sidebar-filters {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.filter-pill:hover {
+  background: #f3f4f6;
+  color: var(--text-primary);
+}
+
+.filter-pill.active {
+  background: var(--text-primary);
+  color: white;
+  border-color: var(--text-primary);
+}
+/* -------------------------- */
+
+.favorites-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.empty-favorites {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-top: 3rem;
+  padding: 3rem 2rem;
+  background: #fafafa;
+  border-radius: 16px;
+  border: 2px dashed #e5e7eb;
+}
+
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.favorite-item {
+  display: flex;
+  height: 100px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.favorite-item:hover {
+  transform: translateX(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.fav-img {
+  width: 100px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px 0 0 12px;
+}
+
+.fav-info {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  width: calc(100% - 100px);
+}
+
+.fav-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-primary);
+}
+
+.fav-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.fav-view-btn {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  flex-grow: 1;
+  border-radius: 8px;
+}
+
+.remove-btn {
+  padding: 6px 10px;
+  color: var(--error-color);
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+}
+
+.remove-btn:hover {
+  background: var(--error-color);
+  color: white;
+  border-color: var(--error-color);
+}

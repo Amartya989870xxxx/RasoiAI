@@ -1,0 +1,65 @@
+.search-form {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto 2rem;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--card-bg);
+  border-radius: 100px; /* Fully rounded Dribbble pill shape */
+  border: 1px solid var(--border-color);
+  padding: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.search-input-wrapper:focus-within {
+  border-color: #d1d5db;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.search-input {
+  /* Reset glass defaults */
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding-left: 54px;
+  padding-right: 130px;
+  height: 52px;
+  font-size: 1.1rem;
+  width: 100%;
+  border-radius: 100px;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.search-input:focus {
+  background: transparent;
+  box-shadow: none;
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.search-btn {
+  position: absolute;
+  right: 6px;
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 1rem;
+}
